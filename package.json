@@ -1,0 +1,56 @@
+{
+  "name": "proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack --config ./build/webpack.config.js",
+    "watch": "webpack --config ./build/webpack.config.js --watch",
+    "dev": "webpack serve --open --config ./build/webpack.config.js",
+    "lint:css": "stylelint **/*.{html,vue,css,sass,scss,less}"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.2",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-vue": "^7.6.0",
+    "html-webpack-plugin": "^5.1.0",
+    "node-sass": "^5.0.0",
+    "process": "^0.11.10",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.10.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-webpack-plugin": "^2.1.1",
+    "vue-loader": "^15.9.6",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "path": "^0.12.7"
+  },
+  "lint-staged": {
+    "*.{html,vue,css,sass,scss,less}": [
+      "npm run lint:css"
+    ]
+  },
+  "gitHooks": {
+      "pre-commit": "lint-staged"
+  }
+}
